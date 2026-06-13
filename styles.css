@@ -182,8 +182,8 @@ h1, h2, h3, h4 { line-height: 1.05; }
     padding: 24px;
 }
 .preloader__gear {
-    width: 120px;
-    height: 120px;
+    width: 156px;
+    height: 156px;
     display: grid;
     place-items: center;
     animation: gear-spin 2.6s linear infinite;
@@ -194,7 +194,7 @@ h1, h2, h3, h4 { line-height: 1.05; }
     to { transform: rotate(360deg); }
 }
 .preloader__logo {
-    width: min(260px, 70vw);
+    width: min(338px, 88vw);
     margin-top: 26px;
     animation: logo-pulse 2.2s ease-in-out infinite;
 }
