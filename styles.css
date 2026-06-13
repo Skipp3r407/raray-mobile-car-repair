@@ -1218,10 +1218,11 @@ body.is-loading { overflow: hidden; }
 }
 
 /* Tool/gear icons spin on card hover */
-.service__icon, .svc__icon, .why__num { transition: transform 0.5s cubic-bezier(.34,1.56,.64,1); }
-.service:hover .service__icon,
-.svc:hover .svc__icon { transform: rotate(180deg); }
+.why__num { transition: transform 0.5s cubic-bezier(.34,1.56,.64,1); }
 .why__card:hover .why__num { transform: rotate(-8deg) scale(1.08); }
+
+/* Emoji icon badges removed site-wide */
+.service__icon, .svc__icon, .step__icon { display: none !important; }
 
 /* Animated shop-floor caution stripes in CTA band */
 .ctaband::before { animation: stripes-move 2.6s linear infinite; }
