@@ -1,0 +1,11 @@
+# Build/preview artifacts
+preview-*.png
+
+# Source/proof assets that shouldn't ship
+logo.png
+watermark.png
+
+# OS / editor junk
+Thumbs.db
+.DS_Store
+*.log
