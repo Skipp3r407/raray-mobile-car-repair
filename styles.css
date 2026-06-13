@@ -32,7 +32,23 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 128px; }
+/* Brand-yellow page scrollbar */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #f8c000 #15161a;
+}
+::-webkit-scrollbar { width: 14px; height: 14px; }
+::-webkit-scrollbar-track { background: #15161a; }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ffe070, #f8c000 45%, #d89a00);
+    border-radius: 999px;
+    border: 3px solid #15161a;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ffd23d, #f8c000 50%, #c98e00);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 200px; }
 
 body {
     font-family: var(--body);
@@ -263,13 +279,13 @@ body.is-loading { overflow: hidden; }
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    min-height: 116px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    min-height: 192px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 .brand { display: flex; align-items: center; flex-shrink: 0; }
 .brand__logo {
-    height: 102px;
+    height: 174px;
     width: auto;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
 }
@@ -770,9 +786,58 @@ body.is-loading { overflow: hidden; }
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 18px 24px;
+    padding: 18px 24px 8px;
     font-size: 0.88rem;
     color: rgba(255,255,255,0.5);
+}
+
+/* Designer credit (portfolio lead-gen) */
+.footer__credit {
+    text-align: center;
+    padding: 6px 24px 18px;
+    font-family: var(--cond);
+    font-size: 0.82rem;
+    letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 0.38);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+.footer__credit-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.62);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer__credit-link:hover { color: #4ea3ff; transform: translateY(-1px); }
+.footer__credit-badge {
+    display: inline-grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.62);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.footer__credit-link:hover .footer__credit-badge { background: #4ea3ff; color: #fff; }
+.footer__credit-url {
+    font-size: 0.76rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+.footer__credit-url:hover { color: #4ea3ff; }
+
+@media (max-width: 760px) {
+    .footer__bottom-inner { justify-content: center; text-align: center; }
+    .footer__credit { padding-bottom: 20px; }
 }
 
 /* ---------- Sticky mobile call bar ---------- */
@@ -808,16 +873,7 @@ body.is-loading { overflow: hidden; }
     transition: width 0.08s linear;
 }
 
-/* Turning gears: the logo watermarks slowly rotate like cogs */
-.hero__watermark { animation: gear-spin-center 60s linear infinite; }
-.page-hero__watermark { animation: gear-spin-center 70s linear infinite; }
-.section__watermark { animation: gear-spin 90s linear infinite; }
-.section__watermark--right { animation: gear-spin-rev 90s linear infinite; }
-@keyframes gear-spin-rev { to { transform: rotate(-360deg); } }
-@keyframes gear-spin-center {
-    from { transform: translateY(-50%) rotate(0); }
-    to { transform: translateY(-50%) rotate(360deg); }
-}
+/* Logo watermarks stay static (no rotation) */
 
 /* Button "rev" shine sweep */
 .btn--primary, .btn--dark { position: relative; overflow: hidden; }
@@ -1589,7 +1645,8 @@ body.is-loading { overflow: hidden; }
     .topbar__item { display: none; }
     .topbar__inner { justify-content: center; }
 
-    .brand__logo { height: 83px; }
+    .header__inner { min-height: 140px; }
+    .brand__logo { height: 120px; }
 
     .trust__inner { grid-template-columns: repeat(2, 1fr); gap: 18px 10px; }
     .trust__item:nth-child(2) { border-right: 0; }
@@ -1623,6 +1680,7 @@ body.is-loading { overflow: hidden; }
     .footer__tag { margin-left: auto; margin-right: auto; }
     .footer__col a { }
     .contact__phone { width: 100%; justify-content: center; }
-    .brand__logo { height: 74px; }
+    .header__inner { min-height: 116px; }
+    .brand__logo { height: 100px; }
     .section__head { margin-bottom: 36px; }
 }
