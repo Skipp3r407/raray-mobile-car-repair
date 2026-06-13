@@ -32,7 +32,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+html { scroll-behavior: smooth; scroll-padding-top: 128px; }
 
 body {
     font-family: var(--body);
@@ -263,13 +263,13 @@ body.is-loading { overflow: hidden; }
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    min-height: 84px;
+    min-height: 116px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 .brand { display: flex; align-items: center; flex-shrink: 0; }
 .brand__logo {
-    height: 64px;
+    height: 102px;
     width: auto;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
 }
@@ -551,11 +551,14 @@ body.is-loading { overflow: hidden; }
 }
 .mobile__media { display: flex; justify-content: center; }
 .mobile__logo {
-    width: min(420px, 92%);
-    background: var(--white);
+    width: min(440px, 94%);
+    background:
+        radial-gradient(420px 280px at 50% 30%, rgba(248, 196, 0, 0.12), transparent 70%),
+        linear-gradient(180deg, #1b1c20 0%, #0b0b0c 100%);
+    border: 1px solid rgba(248, 196, 0, 0.28);
     border-radius: var(--radius-lg);
-    padding: 26px;
-    box-shadow: var(--shadow-md);
+    padding: 30px;
+    box-shadow: var(--shadow-md), inset 0 0 40px rgba(0, 0, 0, 0.5);
 }
 .mobile__text {
     color: rgba(255, 255, 255, 0.78);
@@ -1586,7 +1589,7 @@ body.is-loading { overflow: hidden; }
     .topbar__item { display: none; }
     .topbar__inner { justify-content: center; }
 
-    .brand__logo { height: 52px; }
+    .brand__logo { height: 83px; }
 
     .trust__inner { grid-template-columns: repeat(2, 1fr); gap: 18px 10px; }
     .trust__item:nth-child(2) { border-right: 0; }
@@ -1620,6 +1623,6 @@ body.is-loading { overflow: hidden; }
     .footer__tag { margin-left: auto; margin-right: auto; }
     .footer__col a { }
     .contact__phone { width: 100%; justify-content: center; }
-    .brand__logo { height: 46px; }
+    .brand__logo { height: 74px; }
     .section__head { margin-bottom: 36px; }
 }
