@@ -194,6 +194,36 @@
         });
     });
 
+    // ---- Decorative background gears ----
+    (function () {
+        var teeth = "";
+        for (var a = 0; a < 360; a += 30) {
+            teeth += '<g transform="rotate(' + a + ' 50 50)"><rect x="45" y="2" width="10" height="16" rx="2"/></g>';
+        }
+        var gearSVG =
+            '<svg viewBox="0 0 100 100" aria-hidden="true">' +
+            '<mask id="ghole"><rect width="100" height="100" fill="#fff"/><circle cx="50" cy="50" r="13" fill="#000"/></mask>' +
+            '<g mask="url(#ghole)"><circle cx="50" cy="50" r="33"/>' + teeth + "</g></svg>";
+
+        var map = [
+            { sel: ".hero", pos: ["g--tl", "g--br"] },
+            { sel: ".mobile", pos: ["g--tr", "g--bl"] },
+            { sel: ".steps", pos: ["g--tl", "g--br", "g--mid"] },
+            { sel: ".contact", pos: ["g--tr", "g--bl"] }
+        ];
+        map.forEach(function (m) {
+            var section = document.querySelector(m.sel);
+            if (!section) return;
+            var layer = document.createElement("div");
+            layer.className = "gear-deco";
+            layer.setAttribute("aria-hidden", "true");
+            layer.innerHTML = m.pos.map(function (p) {
+                return '<span class="gear ' + p + '">' + gearSVG + "</span>";
+            }).join("");
+            section.insertBefore(layer, section.firstChild);
+        });
+    })();
+
     // ---- Reveal on scroll ----
     if ("IntersectionObserver" in window) {
         var io = new IntersectionObserver(function (entries) {
@@ -205,7 +235,7 @@
             });
         }, { threshold: 0.12 });
 
-        document.querySelectorAll(".card, .section__head, .ctaband__inner, .mobile__content, .mobile__media")
+        document.querySelectorAll(".card, .section__head, .ctaband__inner, .mobile__content, .mobile__media, .about__media, .about__content, .gallery__item")
             .forEach(function (el) {
                 el.classList.add("reveal");
                 io.observe(el);
