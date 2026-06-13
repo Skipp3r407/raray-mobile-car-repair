@@ -592,10 +592,6 @@ body.is-loading { overflow: hidden; }
     top: -120px;
     bottom: auto;
 }
-.contact .section__watermark {
-    transform-origin: center center;
-    animation: section-wm-spin 55s linear infinite;
-}
 @keyframes section-wm-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }

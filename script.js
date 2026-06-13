@@ -140,18 +140,26 @@
     onScroll();
 
     // ---- Count-up numbers + animated rating bars ----
+    function fmtNum(n, dec) {
+        var s = n.toFixed(dec);
+        var parts = s.split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+    }
+
     function animateCount(elm) {
         var target = parseFloat(elm.getAttribute("data-count"));
         var dec = parseInt(elm.getAttribute("data-decimals") || "0", 10);
+        var prefix = elm.getAttribute("data-prefix") || "";
         var suffix = elm.getAttribute("data-suffix") || "";
-        var dur = 1300, start = null;
+        var dur = 1500, start = null;
         function step(ts) {
             if (!start) start = ts;
             var p = Math.min((ts - start) / dur, 1);
             var eased = 1 - Math.pow(1 - p, 3);
-            elm.textContent = (target * eased).toFixed(dec) + suffix;
+            elm.textContent = prefix + fmtNum(target * eased, dec) + suffix;
             if (p < 1) requestAnimationFrame(step);
-            else elm.textContent = target.toFixed(dec) + suffix;
+            else elm.textContent = prefix + fmtNum(target, dec) + suffix;
         }
         requestAnimationFrame(step);
     }
@@ -208,8 +216,8 @@
         var map = [
             { sel: ".hero", pos: ["g--tl", "g--br"] },
             { sel: ".mobile", pos: ["g--tr", "g--bl"] },
-            { sel: ".steps", pos: ["g--tl", "g--br", "g--mid"] },
-            { sel: ".contact", pos: ["g--tr", "g--bl"] }
+            { sel: ".steps", pos: ["g--tl", "g--br"] },
+            { sel: ".contact", pos: ["g--tr"] }
         ];
         map.forEach(function (m) {
             var section = document.querySelector(m.sel);
