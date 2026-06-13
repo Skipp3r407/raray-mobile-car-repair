@@ -31,6 +31,11 @@
         nav.classList.remove("is-open");
         toggle.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
+        document.querySelectorAll(".nav__dropdown-wrap.is-open").forEach(function (w) {
+            w.classList.remove("is-open");
+            var c = w.querySelector(".nav__caret");
+            if (c) c.setAttribute("aria-expanded", "false");
+        });
     }
 
     if (toggle && nav) {
@@ -48,6 +53,27 @@
             if (e.key === "Escape") closeNav();
         });
     }
+
+    // ---- Services dropdown ----
+    document.querySelectorAll(".nav__dropdown-wrap").forEach(function (wrap) {
+        var caret = wrap.querySelector(".nav__caret");
+        if (!caret) return;
+        caret.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var open = wrap.classList.toggle("is-open");
+            caret.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+    });
+    document.addEventListener("click", function (e) {
+        document.querySelectorAll(".nav__dropdown-wrap.is-open").forEach(function (wrap) {
+            if (!wrap.contains(e.target)) {
+                wrap.classList.remove("is-open");
+                var c = wrap.querySelector(".nav__caret");
+                if (c) c.setAttribute("aria-expanded", "false");
+            }
+        });
+    });
 
     // ---- Header shadow on scroll ----
     var header = document.querySelector(".header");

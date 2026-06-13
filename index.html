@@ -81,7 +81,27 @@
             </a>
 
             <nav class="nav" id="nav">
-                <a href="services.html" class="nav__link">Services</a>
+                <div class="nav__dropdown-wrap">
+                    <a href="services.html" class="nav__link">Services</a>
+                    <button class="nav__caret" type="button" aria-label="Toggle services menu" aria-expanded="false"><span aria-hidden="true">&#9662;</span></button>
+                    <div class="nav__menu" role="menu">
+                        <a href="services.html#brakes" role="menuitem">Brake Repair</a>
+                        <a href="services.html#diagnostics" role="menuitem">Diagnostics</a>
+                        <a href="services.html#battery" role="menuitem">Battery &amp; Charging</a>
+                        <a href="services.html#tuneup" role="menuitem">Tune-Ups</a>
+                        <a href="services.html#oil" role="menuitem">Oil &amp; Fluids</a>
+                        <a href="services.html#cooling" role="menuitem">Cooling</a>
+                        <a href="services.html#ac" role="menuitem">A/C &amp; Heating</a>
+                        <a href="services.html#electrical" role="menuitem">Electrical</a>
+                        <a href="services.html#suspension" role="menuitem">Suspension</a>
+                        <a href="services.html#tires" role="menuitem">Tires &amp; Wheels</a>
+                        <a href="services.html#fuel" role="menuitem">Fuel System</a>
+                        <a href="services.html#belts" role="menuitem">Belts &amp; Hoses</a>
+                        <a href="services.html#inspections" role="menuitem">Inspections</a>
+                        <a href="services.html#mobile" role="menuitem">Mobile &amp; Roadside</a>
+                        <a href="services.html" class="nav__menu-all" role="menuitem">View All Services &rarr;</a>
+                    </div>
+                </div>
                 <a href="reviews.html" class="nav__link">Reviews</a>
                 <a href="#why" class="nav__link">Why Us</a>
                 <a href="#contact" class="nav__link">Contact</a>
@@ -147,36 +167,42 @@
 
             <div class="grid grid--services">
                 <article class="card service">
+                    <div class="service__media"><img src="images/services/brakes.jpg" alt="Brake rotor and caliper repair" class="service__img" loading="lazy"></div>
                     <div class="service__icon" aria-hidden="true">&#128711;</div>
                     <h3 class="service__title">Brake Repair</h3>
                     <p>Pads, rotors, calipers and brake lines inspected and replaced for safe, quiet stopping power.</p>
                 </article>
 
                 <article class="card service">
+                    <div class="service__media"><img src="images/services/diagnostics.jpg" alt="Engine diagnostics under the hood" class="service__img" loading="lazy"></div>
                     <div class="service__icon" aria-hidden="true">&#128269;</div>
                     <h3 class="service__title">Diagnostics</h3>
                     <p>Check-engine lights and weird noises decoded with pro-grade scan tools — no guesswork.</p>
                 </article>
 
                 <article class="card service">
+                    <div class="service__media"><img src="images/services/battery.jpg" alt="Car battery and engine service" class="service__img" loading="lazy"></div>
                     <div class="service__icon" aria-hidden="true">&#128267;</div>
                     <h3 class="service__title">Battery Service</h3>
                     <p>Testing, jump-starts and on-the-spot battery replacement so you're never stranded.</p>
                 </article>
 
                 <article class="card service">
+                    <div class="service__media"><img src="images/services/tuneup.jpg" alt="Mechanic performing an engine tune-up" class="service__img" loading="lazy"></div>
                     <div class="service__icon" aria-hidden="true">&#9881;</div>
                     <h3 class="service__title">Tune-Ups</h3>
                     <p>Spark plugs, filters, fluids and more to keep your engine running smooth and efficient.</p>
                 </article>
 
                 <article class="card service">
+                    <div class="service__media"><img src="images/services/mobile.jpg" alt="Mobile mechanic working under a car" class="service__img" loading="lazy"></div>
                     <div class="service__icon" aria-hidden="true">&#128295;</div>
                     <h3 class="service__title">Mobile Mechanic Services</h3>
                     <p>A complete repair shop on wheels — most maintenance and repairs handled at your location.</p>
                 </article>
 
                 <article class="card service">
+                    <div class="service__media"><img src="images/services/cometoyou.jpg" alt="Mechanic working on a customer's vehicle" class="service__img" loading="lazy"></div>
                     <div class="service__icon" aria-hidden="true">&#128663;</div>
                     <h3 class="service__title">We Come To You</h3>
                     <p>Home, work or roadside — we bring the tools, parts and expertise to your door.</p>
@@ -195,7 +221,7 @@
     <section class="section mobile" id="mobile">
         <div class="container mobile__inner">
             <div class="mobile__media">
-                <img src="images/logo-transparent.png" alt="Broward Mobile Car Repair" class="mobile__logo">
+                <img src="images/feature-work.jpg" alt="Mobile mechanic working on a car with the hood up" class="mobile__photo" loading="lazy">
             </div>
             <div class="mobile__content">
                 <span class="eyebrow">We Come To You</span>
@@ -315,6 +341,22 @@
                 <button type="submit" class="btn btn--primary btn--block btn--lg">Request Same-Day Service</button>
                 <p class="form__note" id="formNote" hidden>Thanks! For the fastest response, call <a href="tel:9542959213">954-295-9213</a>.</p>
             </form>
+        </div>
+
+        <div class="container contact__map-wrap">
+            <div class="contact__map-head">
+                <h3 class="contact__map-title"><span class="ico-pin" aria-hidden="true">&#9679;</span> Proudly Serving All of Broward County</h3>
+                <p class="contact__map-sub">We come to you &mdash; from Fort Lauderdale to Pompano Beach, Hollywood, Coral Springs, Pembroke Pines &amp; beyond.</p>
+            </div>
+            <div class="contact__map">
+                <iframe
+                    title="Broward County, FL service area map"
+                    src="https://www.google.com/maps?q=Broward%20County%2C%20FL&z=10&output=embed"
+                    width="100%" height="100%"
+                    style="border:0;" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen></iframe>
+            </div>
         </div>
     </section>
 

@@ -81,7 +81,27 @@
             </a>
 
             <nav class="nav" id="nav">
-                <a href="services.html" class="nav__link">Services</a>
+                <div class="nav__dropdown-wrap">
+                    <a href="services.html" class="nav__link">Services</a>
+                    <button class="nav__caret" type="button" aria-label="Toggle services menu" aria-expanded="false"><span aria-hidden="true">&#9662;</span></button>
+                    <div class="nav__menu" role="menu">
+                        <a href="services.html#brakes" role="menuitem">Brake Repair</a>
+                        <a href="services.html#diagnostics" role="menuitem">Diagnostics</a>
+                        <a href="services.html#battery" role="menuitem">Battery &amp; Charging</a>
+                        <a href="services.html#tuneup" role="menuitem">Tune-Ups</a>
+                        <a href="services.html#oil" role="menuitem">Oil &amp; Fluids</a>
+                        <a href="services.html#cooling" role="menuitem">Cooling</a>
+                        <a href="services.html#ac" role="menuitem">A/C &amp; Heating</a>
+                        <a href="services.html#electrical" role="menuitem">Electrical</a>
+                        <a href="services.html#suspension" role="menuitem">Suspension</a>
+                        <a href="services.html#tires" role="menuitem">Tires &amp; Wheels</a>
+                        <a href="services.html#fuel" role="menuitem">Fuel System</a>
+                        <a href="services.html#belts" role="menuitem">Belts &amp; Hoses</a>
+                        <a href="services.html#inspections" role="menuitem">Inspections</a>
+                        <a href="services.html#mobile" role="menuitem">Mobile &amp; Roadside</a>
+                        <a href="services.html" class="nav__menu-all" role="menuitem">View All Services &rarr;</a>
+                    </div>
+                </div>
                 <a href="reviews.html" class="nav__link">Reviews</a>
                 <a href="index.html#why" class="nav__link">Why Us</a>
                 <a href="index.html#contact" class="nav__link">Contact</a>
@@ -145,6 +165,7 @@
             <div class="svc-grid">
 
                 <article class="card svc" id="brakes">
+                    <div class="svc__media"><img src="images/services/brakes.jpg" alt="Close-up of a car brake rotor and caliper" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#128711;</div>
                         <h3 class="svc__title">Brake Repair &amp; Service</h3>
@@ -163,6 +184,7 @@
                 </article>
 
                 <article class="card svc" id="diagnostics">
+                    <div class="svc__media"><img src="images/services/diagnostics.jpg" alt="Engine diagnostics under the hood" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#128269;</div>
                         <h3 class="svc__title">Computer Diagnostics</h3>
@@ -181,6 +203,7 @@
                 </article>
 
                 <article class="card svc" id="battery">
+                    <div class="svc__media"><img src="images/services/battery.jpg" alt="Car engine and battery close-up" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#128267;</div>
                         <h3 class="svc__title">Battery, Starting &amp; Charging</h3>
@@ -199,6 +222,7 @@
                 </article>
 
                 <article class="card svc" id="tuneup">
+                    <div class="svc__media"><img src="images/services/tuneup.jpg" alt="Mechanic working on a car engine with tools" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#9881;</div>
                         <h3 class="svc__title">Tune-Ups &amp; Maintenance</h3>
@@ -217,6 +241,7 @@
                 </article>
 
                 <article class="card svc" id="oil">
+                    <div class="svc__media"><img src="images/services/oil.jpg" alt="Mechanic pouring fresh oil into a car engine" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#129704;</div>
                         <h3 class="svc__title">Oil Changes &amp; Fluids</h3>
@@ -235,6 +260,7 @@
                 </article>
 
                 <article class="card svc" id="cooling">
+                    <div class="svc__media"><img src="images/services/cooling.jpg" alt="Car radiator and cooling system" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#127777;</div>
                         <h3 class="svc__title">Cooling &amp; Overheating</h3>
@@ -253,6 +279,7 @@
                 </article>
 
                 <article class="card svc" id="ac">
+                    <div class="svc__media"><img src="images/services/ac.jpg" alt="Car dashboard air conditioning vents" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#10052;</div>
                         <h3 class="svc__title">A/C &amp; Heating</h3>
@@ -271,6 +298,7 @@
                 </article>
 
                 <article class="card svc" id="electrical">
+                    <div class="svc__media"><img src="images/services/electrical.jpg" alt="Technician using a multimeter to test electrical system" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#9889;</div>
                         <h3 class="svc__title">Electrical &amp; Lighting</h3>
@@ -289,6 +317,7 @@
                 </article>
 
                 <article class="card svc" id="suspension">
+                    <div class="svc__media"><img src="images/services/suspension.jpg" alt="Coilover shock absorber and suspension spring" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#128739;</div>
                         <h3 class="svc__title">Suspension &amp; Steering</h3>
@@ -307,6 +336,7 @@
                 </article>
 
                 <article class="card svc" id="tires">
+                    <div class="svc__media"><img src="images/services/tires.jpg" alt="Stack of car tires" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#128666;</div>
                         <h3 class="svc__title">Tires &amp; Wheels</h3>
@@ -325,6 +355,7 @@
                 </article>
 
                 <article class="card svc" id="fuel">
+                    <div class="svc__media"><img src="images/services/fuel.jpg" alt="Fuel pump nozzle refueling a car" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#9981;</div>
                         <h3 class="svc__title">Fuel System</h3>
@@ -341,6 +372,7 @@
                 </article>
 
                 <article class="card svc" id="belts">
+                    <div class="svc__media"><img src="images/services/belts.jpg" alt="Close-up of a car engine belts" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#128260;</div>
                         <h3 class="svc__title">Belts &amp; Hoses</h3>
@@ -357,6 +389,7 @@
                 </article>
 
                 <article class="card svc" id="inspections">
+                    <div class="svc__media"><img src="images/services/inspections.jpg" alt="Car engine compartment inspection" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#128203;</div>
                         <h3 class="svc__title">Inspections</h3>
@@ -373,6 +406,7 @@
                 </article>
 
                 <article class="card svc" id="mobile">
+                    <div class="svc__media"><img src="images/services/mobile.jpg" alt="Mobile mechanic working under a car" class="svc__img" loading="lazy"></div>
                     <div class="svc__head">
                         <div class="svc__icon" aria-hidden="true">&#128663;</div>
                         <h3 class="svc__title">Mobile &amp; Roadside</h3>
