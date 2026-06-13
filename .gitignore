@@ -1,5 +1,6 @@
 # Build/preview artifacts
 preview-*.png
+images/logo-wm-preview.png
 
 # Source/proof assets that shouldn't ship
 logo.png
