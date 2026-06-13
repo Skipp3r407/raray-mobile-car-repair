@@ -499,6 +499,17 @@ body.is-loading { overflow: hidden; }
     top: -120px;
     bottom: auto;
 }
+.contact .section__watermark {
+    transform-origin: center center;
+    animation: section-wm-spin 55s linear infinite;
+}
+@keyframes section-wm-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .contact .section__watermark { animation: none; }
+}
 .section .container { position: relative; z-index: 1; }
 
 /* ---------- Cards / grid ---------- */
@@ -753,36 +764,7 @@ body.is-loading { overflow: hidden; }
 .form__note a { color: var(--yellow-deep); }
 
 /* ---------- Footer ---------- */
-.footer {
-    background: var(--black);
-    color: rgba(255,255,255,0.7);
-    position: relative;
-    overflow: hidden;
-}
-.footer::before {
-    content: "";
-    position: absolute;
-    left: -130px;
-    top: 50%;
-    width: 440px;
-    height: 440px;
-    background: url('images/logo-watermark.png') no-repeat center center;
-    background-size: contain;
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 0;
-    transform-origin: center center;
-    animation: footer-wm-spin 55s linear infinite;
-}
-@keyframes footer-wm-spin {
-    from { transform: translateY(-50%) rotate(0deg); }
-    to { transform: translateY(-50%) rotate(360deg); }
-}
-.footer__inner,
-.footer__bottom {
-    position: relative;
-    z-index: 1;
-}
+.footer { background: var(--black); color: rgba(255,255,255,0.7); }
 .footer__inner {
     display: grid;
     grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
@@ -793,9 +775,6 @@ body.is-loading { overflow: hidden; }
     height: 96px;
     width: auto;
     margin-bottom: 16px;
-}
-@media (prefers-reduced-motion: reduce) {
-    .footer::before { animation: none; }
 }
 .footer__tag { font-size: 0.98rem; max-width: 320px; }
 .footer__col h4,
