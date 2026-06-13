@@ -760,7 +760,20 @@ body.is-loading { overflow: hidden; }
     gap: 36px;
     padding: 60px 24px 44px;
 }
-.footer__logo { height: 96px; width: auto; margin-bottom: 16px; }
+.footer__logo {
+    height: 96px;
+    width: auto;
+    margin-bottom: 16px;
+    animation: footer-logo-spin 18s linear infinite;
+    transform-origin: center center;
+}
+@keyframes footer-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .footer__logo { animation: none; }
+}
 .footer__tag { font-size: 0.98rem; max-width: 320px; }
 .footer__col h4,
 .footer__cta h4 {
@@ -813,20 +826,19 @@ body.is-loading { overflow: hidden; }
     transition: color 0.3s ease, transform 0.3s ease;
 }
 .footer__credit-link:hover { color: #4ea3ff; transform: translateY(-1px); }
-.footer__credit-badge {
-    display: inline-grid;
-    place-items: center;
-    width: 18px;
-    height: 18px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    line-height: 1;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.62);
-    transition: background 0.3s ease, color 0.3s ease;
+.footer__credit-logo {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    flex: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.footer__credit-link:hover .footer__credit-badge { background: #4ea3ff; color: #fff; }
+.footer__credit-link:hover .footer__credit-logo {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 2px rgba(78, 163, 255, 0.5);
+}
 .footer__credit-url {
     font-size: 0.76rem;
     color: rgba(255, 255, 255, 0.3);
